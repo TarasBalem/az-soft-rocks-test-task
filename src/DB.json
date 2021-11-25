@@ -1,0 +1,58 @@
+{
+  "contacts": [
+    {
+      "id": "id-taras-111",
+      "email": "taras@com.ua",
+      "name": "Taras",
+      "phone": "0660000000",
+      "age": 29,
+      "address": {
+        "country": "Ukraine",
+        "city": "Kyiv",
+        "street": "khreshchatyk st, 1"
+      },
+      "company": {
+        "name": "Silpo",
+        "address": "Kyiv, Ukaraine",
+        "website": "https://silpo.ua"
+      },
+      "photo": "/img/photo-1.jpg"
+    },
+    {
+      "id": "id-daria-111",
+      "email": "daria@com.ua",
+      "name": "Daria",
+      "phone": "0505555555",
+      "age": 28,
+      "address": {
+        "country": "Ukraine",
+        "city": "Kyiv",
+        "street": "Main avenue, 12"
+      },
+      "company": {
+        "name": "ATB",
+        "address": "Dnipro, Ukaraine",
+        "website": "https://www.atbmarket.com"
+      },
+      "photo": "/img/photo-2.jpg"
+    },
+    {
+      "id": "id-max-111",
+      "email": "max@com.ua",
+      "name": "Max",
+      "phone": "0951111111",
+      "age": 33,
+      "address": {
+        "country": "Ukraine",
+        "city": "Kyiv",
+        "street": "Obolon st, 2"
+      },
+      "company": {
+        "name": "Novus",
+        "address": "Kyiv, Ukaraine",
+        "website": "https://novus.ua"
+      },
+      "photo": "/img/photo-3.jpg"
+    }
+  ]
+}

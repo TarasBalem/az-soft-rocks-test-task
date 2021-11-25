@@ -1,0 +1,12 @@
+.not-found {
+  a {
+    color: var(--color-black);
+    margin-right: 20px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

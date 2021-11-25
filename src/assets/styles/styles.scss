@@ -1,3 +1,10 @@
 @import "vars";
 @import "normalize.css";
 @import "global";
+
+// components
+@import "navigation";
+@import "notFound";
+
+// pages
+@import "contactsPage";

@@ -1,0 +1,15 @@
+.navigation {
+  padding: 10px 0;
+  border-bottom: var(--border-grey);
+
+  a {
+    color: var(--color-black);
+    margin-right: 20px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
