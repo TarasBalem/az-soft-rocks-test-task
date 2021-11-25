@@ -1,9 +1,10 @@
 .navigation {
   padding: 10px 0;
   border-bottom: var(--border-grey);
+  margin-bottom: 20px;
 
   a {
-    color: var(--color-black);
+    color: var(--color-blue);
     margin-right: 20px;
     text-decoration: none;
 
@@ -11,5 +12,9 @@
       text-decoration: underline;
       cursor: pointer;
     }
+  }
+
+  .active {
+    color: var(--color-black);
   }
 }

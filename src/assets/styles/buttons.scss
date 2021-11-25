@@ -1,0 +1,25 @@
+.btn-add-contact {
+  display: inline-block;
+  padding: 10px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.btn-go-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-black);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-blue);
+  }
+}

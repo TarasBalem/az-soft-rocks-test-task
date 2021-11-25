@@ -1,15 +1,15 @@
 import React from "react";
-import {Routes, Route} from "react-router-dom";
 import ContactsList from "pages/contactsPage/components/ContactsList";
-import ContactItem from "pages/contactsPage/components/ContactItem";
+import BtnAddContact from "components/ButtonAddContact";
 
 const ContactsPage = () => {
   return (
     <div className="contacts">
-      <Routes>
-        <Route path="/" element={<ContactsList />} />
-        <Route path={`/contact/:id`} element={<ContactItem />} />
-      </Routes>
+      <div className="contacts__head">
+        <h2>Contacts</h2>
+        <BtnAddContact to={"new"} />
+      </div>
+      <ContactsList />
     </div>
   );
 };

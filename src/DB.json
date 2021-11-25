@@ -1,57 +1,36 @@
 {
   "contacts": [
     {
-      "id": "id-taras-111",
-      "email": "taras@com.ua",
-      "name": "Taras",
+      "id": "id-john-111",
+      "email": "John@com.ua",
+      "name": "John",
+      "surname":"Smith",
       "phone": "0660000000",
-      "age": 29,
-      "address": {
-        "country": "Ukraine",
-        "city": "Kyiv",
-        "street": "khreshchatyk st, 1"
-      },
-      "company": {
-        "name": "Silpo",
-        "address": "Kyiv, Ukaraine",
-        "website": "https://silpo.ua"
-      },
+      "age": "29",
+      "address":"khreshchatyk st, 1",
+      "company":  "Silpo", 
       "photo": "/img/photo-1.jpg"
     },
     {
-      "id": "id-daria-111",
-      "email": "daria@com.ua",
-      "name": "Daria",
+      "id": "id-harry-111",
+      "email": "harry@com.ua",
+      "name": "Harry",
+      "surname":"Potter",
       "phone": "0505555555",
-      "age": 28,
-      "address": {
-        "country": "Ukraine",
-        "city": "Kyiv",
-        "street": "Main avenue, 12"
-      },
-      "company": {
-        "name": "ATB",
-        "address": "Dnipro, Ukaraine",
-        "website": "https://www.atbmarket.com"
-      },
+      "age": "28",
+      "address": "Main avenue, 12",
+      "company":"ATB",
       "photo": "/img/photo-2.jpg"
     },
     {
-      "id": "id-max-111",
-      "email": "max@com.ua",
-      "name": "Max",
+      "id": "id-frodo-111",
+      "email": "frodo@com.ua",
+      "name": "Frodo",
+      "surname":"Baggins",
       "phone": "0951111111",
-      "age": 33,
-      "address": {
-        "country": "Ukraine",
-        "city": "Kyiv",
-        "street": "Obolon st, 2"
-      },
-      "company": {
-        "name": "Novus",
-        "address": "Kyiv, Ukaraine",
-        "website": "https://novus.ua"
-      },
+      "age": "33",
+      "address":"Obolon st, 2",
+      "company": "Novus",
       "photo": "/img/photo-3.jpg"
     }
   ]

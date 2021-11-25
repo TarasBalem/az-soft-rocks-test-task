@@ -8,8 +8,19 @@ const slice = createSlice({
     error: null,
   },
   reducers: {
-    contactsReceived: (state, action) => {
+    getContacts: (state, action) => {
       state.contacts = action.payload;
+    },
+    addContact: (state, action) => {
+      state.contacts.push({...action.payload});
+    },
+    updateContact: (state, action) => {
+      const index = state.contacts.findIndex(c => c.id === action.payload.id);
+      state.contacts[index] = action.payload;
+    },
+    removeContact: (state, action) => {
+      const index = state.contacts.findIndex(c => c.id === action.payload.id);
+      state.contacts.splice(index, 1);
     },
     onError: (state, action) => {
       state.error = action.payload;
@@ -18,15 +29,5 @@ const slice = createSlice({
 });
 
 export default slice.reducer;
-export const {contactsReceived, onError} = slice.actions;
-
-// Запит на контакти
-// export const getContacts = () => async dispatch => {
-//   try {
-//     const _contacts = contacts;
-//     dispatch(contactsReceived(_contacts));
-//   } catch (err) {
-//     dispatch(onError(err));
-//     throw err;
-//   }
-// };
+export const {getContacts, addContact, updateContact, removeContact, onError} =
+  slice.actions;
