@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ModalConfirmation = ({children, handleConfirm, handleCancel}) => {
   return (
@@ -16,6 +17,16 @@ const ModalConfirmation = ({children, handleConfirm, handleCancel}) => {
       </div>
     </div>
   );
+};
+
+ModalConfirmation.propTypes = {
+  children: PropTypes.string.isRequired,
+  handleCancel: PropTypes.func,
+  handleConfirm: PropTypes.func,
+};
+
+ModalConfirmation.defaultProps = {
+  children: "You are sure?",
 };
 
 export default ModalConfirmation;
