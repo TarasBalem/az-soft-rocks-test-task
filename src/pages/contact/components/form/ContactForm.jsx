@@ -1,8 +1,9 @@
 import React, {useState} from "react";
+import "./form.scss";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {addContact} from "store/contacts";
-import TextInput from "components/TextInput";
+import TextInput from "components/textInput/TextInput";
 import defaultAvatar from "assets/img/default-avatar.jpg";
 
 const initialState = {

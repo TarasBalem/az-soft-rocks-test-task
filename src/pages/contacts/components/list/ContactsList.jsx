@@ -1,9 +1,10 @@
 import React, {useState} from "react";
+import "./contactsList.scss";
 import {Link} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import {removeContact} from "store/contacts";
 
-import ModalConfirmation from "components/ModalConfirmation";
+import ModalConfirmation from "components/modal/ModalConfirmation";
 
 const ContactsList = () => {
   const {contacts} = useSelector(state => state.contacts);
@@ -37,20 +38,18 @@ const ContactsList = () => {
           handleCancel={handleCancel}
         />
       )}
-      <ul className="contacts__list">
+      <ul className="list">
         {contacts.map(contact => (
-          <li key={contact.id} className="contacts__list-item">
+          <li key={contact.id} className="list__item">
             <Link to={`/contact/${contact.id}`}>
               {contact.name} {contact.surname}
             </Link>
-            <div className="btns-group">
-              <button
-                className="btns-group__btn delete"
-                onClick={() => handleSelectContactToDelete(contact)}
-              >
-                delete
-              </button>
-            </div>
+            <button
+              className="btn-delete"
+              onClick={() => handleSelectContactToDelete(contact)}
+            >
+              delete
+            </button>
           </li>
         ))}
       </ul>

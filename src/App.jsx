@@ -1,16 +1,12 @@
 import React, {lazy, Suspense} from "react";
 import {Routes, Route} from "react-router-dom";
-import Navigation from "components/Navigation";
-import Loading from "components/Loading";
-import ContactsPage from "pages/contactsPage/ContactsPage";
+import Navigation from "components/navigation/Navigation";
+import Loading from "components/loading/Loading";
+import ContactsPage from "pages/contacts/ContactsPage";
 
-const PageNotFound = lazy(() => import("components/PageNotFound"));
-const ContactItem = lazy(() =>
-  import("pages/contactsPage/components/ContactItem"),
-);
-const ContactForm = lazy(() =>
-  import("pages/contactsPage/components/ContactForm"),
-);
+const PageNotFound = lazy(() => import("pages/notFound/PageNotFound"));
+const ContactItem = lazy(() => import("pages/contact/ContactItem"));
+const ContactForm = lazy(() => import("pages/contact/components/form/ContactForm"));
 
 const App = () => {
   return (

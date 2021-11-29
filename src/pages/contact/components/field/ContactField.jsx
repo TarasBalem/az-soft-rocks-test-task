@@ -1,4 +1,5 @@
 import React from "react";
+import "./field.scss";
 
 const ContactField = ({
   fieldKey,
@@ -11,8 +12,8 @@ const ContactField = ({
 }) => {
   return (
     <>
-      <div className="contact-item__field">
-        <div className="title">{fieldKey}</div>
+      <div className="field">
+        <div className="filed__title">{fieldKey}</div>
         {isEditing ? (
           <input
             type="text"
@@ -20,25 +21,39 @@ const ContactField = ({
             onChange={handleFieldChange}
           />
         ) : (
-          <div className="value">{value}</div>
+          <div className="filed__value">{value}</div>
         )}
 
         {fieldKey !== "id" ? (
           <div className="btn-group">
             {isEditing ? (
               <>
-                <button onClick={() => onActionConfirm(fieldKey, "confirm")}>
+                <button
+                  className="btn-confirm"
+                  onClick={() => onActionConfirm(fieldKey, "confirm")}
+                >
                   confirm
                 </button>
-                <button onClick={() => onActionConfirm(fieldKey, "cencel")}>
+                <button
+                  className="btn-cancel"
+                  onClick={() => onActionConfirm(fieldKey, "cencel")}
+                >
                   cancel
                 </button>
               </>
             ) : (
-              <button onClick={() => handleEditField(fieldKey)}>edit</button>
+              <button
+                className="btn-edit"
+                onClick={() => handleEditField(fieldKey)}
+              >
+                edit
+              </button>
             )}
 
-            <button onClick={() => onActionConfirm(fieldKey, "delete")}>
+            <button
+              className="btn-delete"
+              onClick={() => onActionConfirm(fieldKey, "delete")}
+            >
               delete
             </button>
           </div>

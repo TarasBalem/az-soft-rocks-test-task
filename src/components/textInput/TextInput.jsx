@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./textInput.scss";
 
 const TextInput = ({name, label, handleChange, value, error}) => {
   let wrapperClass = "input-wrapp";

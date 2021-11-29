@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./modalConfirmation.scss";
 
 const ModalConfirmation = ({children, handleConfirm, handleCancel}) => {
   return (

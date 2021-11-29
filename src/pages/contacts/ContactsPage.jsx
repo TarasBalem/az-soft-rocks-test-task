@@ -1,6 +1,7 @@
 import React from "react";
-import ContactsList from "pages/contactsPage/components/ContactsList";
-import BtnAddContact from "components/ButtonAddContact";
+import "./contactsPage.scss";
+import ContactsList from "pages/contacts/components/list/ContactsList";
+import BtnAddContact from "components/buttonAddContact/ButtonAddContact";
 
 const ContactsPage = () => {
   return (

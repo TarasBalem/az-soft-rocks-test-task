@@ -1,0 +1,79 @@
+.field {
+  border: var(--border-grey);
+  border-top: none;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 10px;
+
+  &:first-child {
+    border-top: var(--border-grey);
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__value {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    border: solid 1px var(--color-grey);
+    outline-color: rgba(13, 76, 255, 0.5);
+    border-radius: 5px;
+  }
+
+  .btn-group {
+    display: flex;
+    align-items: center;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 25px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 5px;
+      color: var(--color-white);
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .btn-edit {
+      border: solid 2px var(--color-green);
+      background-color: var(--color-green);
+      &:active {
+        box-shadow: 0 0 10px var(--shadow-green);
+      }
+    }
+
+    .btn-confirm,
+    .btn-cancel {
+      border: solid 2px var(--color-blue);
+      background-color: var(--color-blue);
+      &:active {
+        box-shadow: 0 0 10px var(--shadow-blue);
+      }
+    }
+
+    .btn-delete {
+      border: solid 2px var(--color-red);
+      background-color: var(--color-red);
+      &:active {
+        box-shadow: 0 0 10px var(--shadow-red);
+      }
+    }
+  }
+}

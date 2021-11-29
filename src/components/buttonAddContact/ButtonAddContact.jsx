@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./buttonAddContact.scss";
 import {Link} from "react-router-dom";
 
 const ButtonAddContact = ({to}) => {

@@ -1,12 +1,13 @@
 import React, {useState} from "react";
+import "./contactItem.scss";
 import {useParams} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import defaultAvatar from "assets/img/default-avatar.jpg";
-import BtnCloseItem from "components/ButtonRedirect";
-import ContactField from "pages/contactsPage/components/ContactField";
-import ModalAddField from "pages/contactsPage/components/ModalAddField";
+import BtnCloseItem from "components/buttonRedirect/ButtonRedirect";
+import ContactField from "pages/contact/components/field/ContactField";
+import ModalAddField from "pages/contact/components/modal/ModalAddField";
 import {updateContact} from "store/contacts";
-import ModalConfirmation from "components/ModalConfirmation";
+import ModalConfirmation from "components/modal/ModalConfirmation";
 
 const ContactItem = () => {
   const params = useParams();
@@ -96,6 +97,7 @@ const ContactItem = () => {
       }),
     );
     handleCloseLastUpdateModal(false);
+    setLastUpdateActionData(null);
   };
 
   const handleCloseLastUpdateModal = () => {
@@ -123,7 +125,7 @@ const ContactItem = () => {
           handleConfirm={handleLastUpdateCancel}
           handleCancel={handleCloseLastUpdateModal}
         >
-          xxx
+          You are sure, you want to cancel last update?
         </ModalConfirmation>
       )}
       <div className="contact-item">
@@ -147,10 +149,23 @@ const ContactItem = () => {
               onActionConfirm={onActionConfirm}
             />
           ))}
-          <button onClick={() => setShowModalAddFiled(true)}>+Add field</button>
-          <button onClick={() => setShowModalLastUpdateCancel(true)}>
-            cancel last action
-          </button>
+          <div className="btns-group">
+            <button
+              className="btn-add"
+              onClick={() => setShowModalAddFiled(true)}
+            >
+              +Add field
+            </button>
+            <button
+              disabled={!lastUpdateActionData}
+              className={
+                !lastUpdateActionData ? "btn-cancel disabled" : "btn-cancel"
+              }
+              onClick={() => setShowModalLastUpdateCancel(true)}
+            >
+              cancel last action
+            </button>
+          </div>
         </div>
       </div>
     </>

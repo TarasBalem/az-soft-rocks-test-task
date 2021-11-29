@@ -45,10 +45,16 @@
 
       .btn-confirm {
         background-color: var(--color-blue);
+        &:active {
+          box-shadow: 0 0 10px var(--shadow-blue);
+        }
       }
 
       .btn-cancel {
-        background-color: var(--color-grey);
+        background-color: var(--color-blue);
+        &:active {
+          box-shadow: 0 0 10px var(--shadow-blue);
+        }
       }
     }
   }

@@ -1,0 +1,13 @@
+.btn-go-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-black);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-blue);
+  }
+}
