@@ -24,10 +24,28 @@ const ContactForm = () => {
 
   const validate = data => {
     const error = {};
+
+    const textRegex = /^[a-zA-Z]+$/;
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const phoneRegex = /(?:\+|\d)[\d\-\(\)]{9,}\d/;
+    const ageRegex = /^\d{1,3}$/;
+
+    if (!textRegex.test(data.name)) error.name = "Incorrect name";
     if (!data.name) error.name = "Name cannot be blank";
+
+    if (!textRegex.test(data.surname)) error.surname = "Incorrect surname";
     if (!data.surname) error.surname = "Surname cannot be blank";
+
+    if (!emailRegex.test(data.email)) error.email = "Incorrect email";
     if (!data.email) error.email = "Email cannot be blank";
+
+    if (!phoneRegex.test(data.phone)) error.phone = "Incorrect phone";
     if (!data.phone) error.phone = "Phone cannot be blank";
+
+    if (!ageRegex.test(data.age)) error.age = "Incorrect age";
+    if (!data.age) error.age = "Age cannot be blank";
+
     return error;
   };
 
