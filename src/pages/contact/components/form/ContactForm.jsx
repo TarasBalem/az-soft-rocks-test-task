@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import "./form.scss";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {addContact} from "store/contacts";
 import TextInput from "components/textInput/TextInput";
+import ImgLoader from "components/imgLoader/ImgLoader";
 import defaultAvatar from "assets/img/default-avatar.jpg";
 
 const initialState = {
@@ -13,19 +14,31 @@ const initialState = {
   email: "",
   phone: "",
   address: "",
+  photo: "",
 };
 
 const ContactForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const photoRef = useRef();
 
   const [formData, setFormData] = useState(initialState);
   const [error, setError] = useState({});
 
+  // фото вставляється відносно директорії public (public/img/photo-1.jpg)
+  const updatePhoto = e => {
+    const file = photoRef.current.files && photoRef.current.files[0];
+
+    if (file) {
+      const img = "/img/" + file.name;
+      setFormData({...formData, photo: img});
+    }
+  };
+
   const validate = data => {
     const error = {};
 
-    const textRegex = /^[а-яА-ЯёЁЇїІіЄєҐґa-zA-Z0-9]+$/;
+    const textRegex = /^[а-яА-ЯёЁЇїІіЄєҐґa-zA-Z]+$/;
     const emailRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phoneRegex = /(?:\+|\d)[\d\-\(\)]{9,}\d/;
@@ -71,7 +84,21 @@ const ContactForm = () => {
         X
       </span>
       <div className="form__photo">
-        <img src={defaultAvatar} alt="avatar" />
+        <ImgLoader
+          src={formData.photo}
+          alt={formData.name}
+          fallbackImg={defaultAvatar}
+        />
+        <div className="btn-add-photo">
+          <label htmlFor="photo">+add photo</label>
+          <input
+            type="file"
+            id="photo"
+            name="photo"
+            ref={photoRef}
+            onChange={updatePhoto}
+          />
+        </div>
       </div>
       <div className="form__inputs">
         <TextInput
@@ -108,6 +135,13 @@ const ContactForm = () => {
           handleChange={handleChange}
           value={formData.phone}
           error={error.phone}
+        />
+        <TextInput
+          name="photo"
+          label="photo"
+          handleChange={handleChange}
+          value={formData.photo}
+          error={error.photo}
         />
         <TextInput
           name="address"

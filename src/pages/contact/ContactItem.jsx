@@ -131,7 +131,11 @@ const ContactItem = () => {
       <div className="contact-item">
         <BtnCloseItem />
         <div className="contact-item__photo">
-          <img src={defaultAvatar} alt="avatar" />
+          {contact.photo ? (
+            <img src={contact.photo} alt={contact.name} />
+          ) : (
+            <img src={defaultAvatar} alt="default-avatar" />
+          )}
         </div>
         <div className="contact-item__info">
           {Object.keys(contact).map(key => (
