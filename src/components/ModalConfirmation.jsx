@@ -8,7 +8,7 @@ const ModalConfirmation = ({children, handleConfirm, handleCancel}) => {
         <div className="modal__info">{children}</div>
         <div className="modal__btns">
           <button className="btn-confirm" onClick={() => handleConfirm()}>
-            Confirm
+            Yes
           </button>
           <button className="btn-cancel" onClick={() => handleCancel()}>
             Cancel

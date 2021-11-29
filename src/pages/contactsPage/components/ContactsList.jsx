@@ -44,12 +44,6 @@ const ContactsList = () => {
               {contact.name} {contact.surname}
             </Link>
             <div className="btns-group">
-              <Link
-                to={`/contacts/edit/${contact.id}`}
-                className="btns-group__btn edit"
-              >
-                edit
-              </Link>
               <button
                 className="btns-group__btn delete"
                 onClick={() => handleSelectContactToDelete(contact)}

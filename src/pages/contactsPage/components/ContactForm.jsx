@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
-import {useNavigate, useParams} from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
-import {addContact, updateContact} from "store/contacts";
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {addContact} from "store/contacts";
 import TextInput from "components/TextInput";
 import defaultAvatar from "assets/img/default-avatar.jpg";
 
@@ -21,16 +21,6 @@ const ContactForm = () => {
   const [formData, setFormData] = useState(initialState);
   const [error, setError] = useState({});
 
-  const params = useParams();
-  const {contacts} = useSelector(state => state.contacts);
-  const contact = contacts.find(c => c.id === params.id);
-
-  useEffect(() => {
-    if (params.id) {
-      setFormData(contact);
-    }
-  }, [contact, params.id]);
-
   const validate = data => {
     const error = {};
     if (!data.name) error.name = "Name cannot be blank";
@@ -45,19 +35,13 @@ const ContactForm = () => {
     setError({...error, [e.target.name]: ""});
   };
 
-  const saveContact = () => {
-    params.id
-      ? dispatch(updateContact(formData))
-      : dispatch(addContact(formData));
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
     const error = validate(formData);
     setError(error);
 
     if (Object.keys(error).length === 0) {
-      saveContact();
+      dispatch(addContact(formData));
       navigate(-1);
     }
   };
@@ -113,8 +97,10 @@ const ContactForm = () => {
           value={formData.address}
           error={error.address}
         />
-        <button className="btn-submit">Save</button>
       </div>
+      <button type="submit" className="btn-submit">
+        Save
+      </button>
     </form>
   );
 };
