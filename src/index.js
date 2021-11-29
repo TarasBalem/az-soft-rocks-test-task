@@ -8,6 +8,14 @@ import configureStore from "./store/configureStore";
 
 const store = configureStore();
 
+// перевірка localStorage на наявність контактів
+store.subscribe(() => {
+  localStorage.setItem(
+    "stateContacts",
+    JSON.stringify(store.getState().contacts),
+  );
+});
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

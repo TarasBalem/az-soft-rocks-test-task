@@ -1,10 +1,19 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {contacts} from "DB.json";
 
+// так як не використовується сервер,то контакти записую в localStorage, щоб при перевантаженні сторінки нового контакта він відображався
+let persistedState = [];
+
+if (process.browser) {
+  persistedState = localStorage.getItem("stateContacts")
+    ? JSON.parse(localStorage.getItem("stateContacts")).contacts
+    : contacts;
+}
+
 const slice = createSlice({
   name: "contacts",
   initialState: {
-    contacts: contacts,
+    contacts: persistedState,
     error: null,
   },
   reducers: {
